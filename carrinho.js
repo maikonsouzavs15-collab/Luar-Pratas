@@ -77,7 +77,19 @@ let produtos = [
 {nome:"Colar Pérola 45cm Elo Cadeado", preco:105, img:"assets/colares/colar24.png", categoria:"colar"},
 {nome:"Colar Veneziana 45cm Pingente Coração Galeria Com Zirconia", preco:105, img:"assets/colares/colar25.png", categoria:"colar"},
 {nome:"Colar 45cm Elo Português Bola 10mm Maciça", preco:105, img:"assets/colares/colar26.png", categoria:"colar"},
-
+{nome:"Colar Elo Português 45cm 3 Estrelas Vazadas", preco: 125, img:"assets/colares/colar27.png", categoria: "colar"},
+{nome:"Colar Veneziana 45cm com pingente Coração Zircônia 10mm", preco: 125, img:"assets/colares/colar28.png", categoria: "colar"},
+{nome:"Colar Borboletas 45cm Elo Cartier", preco: 125, img:"assets/colares/colar29.png", categoria: "colar"},
+{nome:"Colar Elo Português 45cm 2 Corações", preco: 130, img:"assets/colares/colar30.png", categoria: "colar"},
+{nome:"Colar 45cm Pingente Redondo Cravejado zirconia 6mm inteiro Cravejado", preco: 135, img:"assets/colares/colar31.png", categoria: "colar"},
+{nome:"Colar 45cm Pandora Cravejado Cristais", preco: 140, img:"assets/colares/colar32.png", categoria: "colar"},
+{nome:"Colar Regulavel Gravatinha Elo Cadeado Corações", preco: 140, img:"assets/colares/colar33.png", categoria: "colar"},
+{nome:"Colar 45cm Gravatinha Cruz Cristais zirconia", preco: 140, img:"assets/colares/colar34.png", categoria: "colar"},
+{nome:"Colar Terço 45cm Elo corrente Cadeado", preco: 145, img:"assets/colares/colar35.png", categoria: "colar"},
+{nome:"Colar Elo Cartier Pingentes Estrelas e Lua 40cm", preco: 145, img:"assets/colares/colar36.png", categoria: "colar"},
+{nome:"Colar Elo Cartier Pingentes Borboletas 40cm", preco: 150, img:"assets/colares/colar37.png", categoria: "colar"},
+{nome:"Colar MOISSANITE (Diamante Lab) 45cm com 5mm", preco: 150, img:"assets/colares/colar38.png", categoria: "colar"},
+{nome:"Colar MOISSANITE (Diamante Lab) 45cm com 7mm", preco: 180, img:"assets/colares/colar39.png", categoria: "colar"},
     // ----------------- PULSEIRAS -----------------
 {nome:"Pulseira Exemplo",preco:90,img:"assets/pulseiras/pulseiras1.png",categoria:"pulseira"},
 
@@ -206,7 +218,28 @@ function pesquisar() {
     let filtrado = produtos.filter(p => p.nome.toLowerCase().includes(texto));
     mostrarProdutos(filtrado);
 }
+function mostrarProdutos(lista) {
+    let area = document.getElementById("produtos");
+    if (!area) return;
+    area.innerHTML = "";
 
+    // Se a lista não existir ou estiver vazia, avisa no console
+    if (!lista || lista.length === 0) {
+        console.warn("Nenhum produto para mostrar.");
+        return;
+    }
+
+    lista.forEach(p => {
+        area.innerHTML += `
+            <div class="produto">
+                <img src="${p.img}">
+                <h3>${p.nome}</h3>
+                <p>R$ ${p.preco.toFixed(2).replace('.', ',')}</p>
+                <button onclick="addCarrinho('${p.nome}', ${p.preco})">Comprar</button>
+            </div>
+        `;
+    });
+}
 // --------------------------------------------------
 // ENVIAR WHATSAPP
 function enviarWhats() {
@@ -217,21 +250,26 @@ function enviarWhats() {
 
     let telefone = "5585991599704";
     let total = 0;
-    // Começamos a mensagem
-    let mensagem = "Oii! Tudo Bem? ✨\nAcabei de escolher algumas peças no site:\n\n";
 
-    // 1. Percorre o carrinho para listar os produtos e somar o total
-    carrinho.forEach(item => {
-        mensagem += `• ${item.nome} - R$ ${item.preco}\n`;
-        total += item.preco;
+    // \u2728 é o brilho ✨ | \ud83d\udcb3 é a sacola 🛍️
+    let mensagem = "Oii! Tudo bem? \u2728\n";
+    mensagem += "Acabei de escolher algumas peças no catálogo da Luar Pratas e gostaria de finalizar meu pedido.\n\n";
+    mensagem += "\ud83d\udcb3 *Pedidos - Luar Pratas*\n\n";
+
+    carrinho.forEach(p => {
+        mensagem += `• ${p.nome} - R$ ${p.preco.toFixed(2)}\n`;
+        total += p.preco;
     });
 
-    mensagem += `\n*Total: R$ ${total.toFixed(2)}*`;
+    // \ud83d\udcb0 é o dinheiro 💰
+    mensagem += `\n\ud83d\udcb0 *Total: R$ ${total.toFixed(2)}*`;
 
-    // 2. Codifica a mensagem para a URL (converte espaços e emojis)
-    const mensagemFormatada = encodeURIComponent(mensagem);
-    
-    // 3. Monta o link e abre em uma nova aba
-    const url = `https://wa.me/${telefone}?text=${mensagemFormatada}`;
+    let url = "https://api.whatsapp.com/send?phone=" + telefone + "&text=" + encodeURIComponent(mensagem);
+
     window.open(url, "_blank");
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Página carregada! Chamando produtos...");
+    mostrarProdutos("Todos"); 
+});
