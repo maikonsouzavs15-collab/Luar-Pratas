@@ -97,5 +97,19 @@
         </a>
     </div>
 
-</body>
+</body><script>
+document.addEventListener("DOMContentLoaded", function () {
+  const produtos = document.querySelectorAll(".produto");
+
+  produtos.forEach(produto => {
+    produto.style.display = "block";
+  });
+});
+</script>
 </html>
+
+<script>
+window.onload = function () {
+  mostrarProdutos("todos");
+};
+</script>
