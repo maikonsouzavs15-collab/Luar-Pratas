@@ -410,3 +410,8 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Página carregada! Chamando produtos...");
     mostrarProdutos("Todos"); 
 });
+
+<div id="modalZoom" class="modal-zoom">
+  <span class="fechar">&times;</span>
+  <img class="modal-img" id="imgZoom">
+</div>
