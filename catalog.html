@@ -5,70 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luar Pratas - Catálogo</title>
 <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header class="topo">
-
-<div class="logo">Luar Pratas</div>
-
-<div class="pesquisa">
-<input type="text" id="pesquisa" placeholder="Pesquisar joia..." onkeyup="pesquisar()">
-</div>
-
-<div class="carrinho-icon" onclick="abrirCarrinho()">
-🛒 <span id="contador">0</span>
-</div>
-
-</header>
-
-<nav class="categorias">
-
-<button onclick="filtrar('brinco')">Brincos</button>
-<button onclick="filtrar('colar')">Colares</button>
-<button onclick="filtrar('pulseira')">Pulseiras</button>
-<button onclick="filtrar('anel')">Anéis</button>
-<button onclick="filtrar('pingente')">Pingentes</button>
-<button onclick="filtrar('personalizado')">Personalizados</button>
-<button onclick="filtrar('masculino')">Linha Masculina</button>
-<button onclick="filtrar('todos')">Todos</button>
-
-</nav>
-
-<div class="grade-produtos" id="produtos"></div>
-
-<div class="carrinho-lateral" id="carrinho">
-
-<h2>Seu Carrinho</h2>
-
-<div id="listaCarrinho"></div>
-
-<hr>
-
-<p id="total">Total: R$ 0</p>
-
-<button class="btn-enviar" onclick="enviarWhats()">Enviar Pedido no WhatsApp</button>
-
-<button class="btn-fechar" onclick="fecharCarrinho()">Fechar</button>
-
-</div>
-
-<script src="carrinho.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  
-  if (typeof filtrar === "function") {
-    filtrar("todos");
-  }
-
-});
-</script>
-  <div id="modalZoom" class="modal-zoom">
-  <span class="fechar">&times;</span>
-  <img class="modal-img" id="imgZoom">
-</div>
 
 <style>
 .modal-zoom {
@@ -101,32 +37,78 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 </style>
 
-<script>
-const modal = document.getElementById("modalZoom");
-const modalImg = document.getElementById("imgZoom");
-const fechar = document.querySelector(".fechar");
+</head>
 
-// 🔥 só imagens das joias (IMPORTANTÍSSIMO)
-document.querySelectorAll(".produto img").forEach(img => {
-  img.addEventListener("click", function() {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-  });
-});
+<body>
 
-fechar.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+<header class="topo">
+<div class="logo">Luar Pratas</div>
 
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-});
-</script>
-  <div id="modalZoom" class="modal-zoom">
+<div class="pesquisa">
+<input type="text" id="pesquisa" placeholder="Pesquisar joia..." onkeyup="pesquisar()">
+</div>
+
+<div class="carrinho-icon" onclick="abrirCarrinho()">
+🛒 <span id="contador">0</span>
+</div>
+</header>
+
+<nav class="categorias">
+<button onclick="filtrar('brinco')">Brincos</button>
+<button onclick="filtrar('colar')">Colares</button>
+<button onclick="filtrar('pulseira')">Pulseiras</button>
+<button onclick="filtrar('anel')">Anéis</button>
+<button onclick="filtrar('pingente')">Pingentes</button>
+<button onclick="filtrar('personalizado')">Personalizados</button>
+<button onclick="filtrar('masculino')">Linha Masculina</button>
+<button onclick="filtrar('todos')">Todos</button>
+</nav>
+
+<div class="grade-produtos" id="produtos"></div>
+
+<div class="carrinho-lateral" id="carrinho">
+<h2>Seu Carrinho</h2>
+<div id="listaCarrinho"></div>
+<hr>
+<p id="total">Total: R$ 0</p>
+<button class="btn-enviar" onclick="enviarWhats()">Enviar Pedido no WhatsApp</button>
+<button class="btn-fechar" onclick="fecharCarrinho()">Fechar</button>
+</div>
+
+<!-- MODAL (ZOOM DA IMAGEM) -->
+<div id="modalZoom" class="modal-zoom">
   <span class="fechar">&times;</span>
   <img class="modal-img" id="imgZoom">
 </div>
+
+<!-- SEU JS DO CARRINHO -->
+<script src="carrinho.js"></script>
+
+<!-- ATIVAR PRODUTOS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof filtrar === "function") {
+    filtrar("todos");
+  }
+});
+</script>
+
+<!-- 🔥 SCRIPT DO ZOOM (IMPORTANTE: ÚLTIMO DE TODOS) -->
+<script>
+document.addEventListener("click", function(e) {
+  if (e.target.tagName === "IMG") {
+    const modal = document.getElementById("modalZoom");
+    const modalImg = document.getElementById("imgZoom");
+
+    modal.style.display = "block";
+    modalImg.src = e.target.src;
+  }
+});
+
+document.querySelector(".fechar").onclick = function() {
+  document.getElementById("modalZoom").style.display = "none";
+};
+</script>
+
 </body>
 </html>
