@@ -49,7 +49,24 @@ let produtos = [
 {nome:"Brinco Raio",preco:35,img:"assets/brinco/brinco46.png",categoria:"brinco"},
 {nome:"Brinco Espírito Santo",preco:45,img:"assets/brinco/brinco47.png",categoria:"brinco"},
 {nome:"Brinco laço",preco:45,img:"assets/brinco/brinco48.png",categoria:"brinco"},
-
+{nome:"Piercing Umbigo Cristal Pino Antialérgico", preco:60.00, img:"assets/brinco/brinco49.png", categoria:"brinco"},
+{nome:"Piercing Umbigo Coração Pino Antialérgico", preco:60.00, img:"assets/brinco/brinco50.png", categoria:"brinco"},
+{nome:"Piercing Umbigo Coração aberto Pino Antialérgico", preco:60.00, img:"assets/brinco/brinco51.png", categoria:"brinco"},
+{nome:"Piercing para Orelha Clássico Bolinhas", preco:40.00, img:"assets/brinco/brinco52.png", categoria:"brinco"},
+{nome:"Brinco Zircônia Estrela 4mm Com Corrente Veneziana", preco:90.00, img:"assets/brinco/brinco53.png", categoria:"brinco"},
+{nome:"Brinco Olho Grego Com Veneziana", preco:90.00, img:"assets/brinco/brinco54.png", categoria:"brinco"},
+{nome:"Brinco Zircônia 4mm Com Corrente Veneziana", preco:90.00, img:"assets/brinco/brinco55.png", categoria:"brinco"},
+{nome:"Brinco Boreal Escama Sereia Corrente Veneziana", preco:90.00, img:"assets/brinco/brinco56.png", categoria:"brinco"},
+{nome:"Piercing Coração 9Mm Com Infinito Cravejado Para Orelha", preco:40.00, img:"assets/brinco/brinco57.png", categoria:"brinco"},
+{nome:"Piercing Nariz 3 Cristais Zircônias", preco:35.00, img:"assets/brinco/brinco58.png", categoria:"brinco"},
+{nome:"Piercing Nariz Lua Lisa 1Mm", preco:35.00, img:"assets/brinco/brinco59.png", categoria:"brinco"},
+{nome:"Piercing Nariz Estrela", preco:35.00, img:"assets/brinco/brinco60.png", categoria:"brinco"},
+{nome:"Piercing Coração 9Mm Com Cruz Cravejada Para Orelha", preco:45.00, img:"assets/brinco/brinco61.png", categoria:"brinco"},
+{nome:"Piercing Cristal Orelha, Cartilagem, Trágus", preco:45.00, img:"assets/brinco/brinco62.png", categoria:"brinco"},
+{nome:"Piercing Coração Bolinha Orelha, Cartilagem, Trágus", preco:40.00, img:"assets/brinco/brinco63.png", categoria:"brinco"},
+{nome:"Piercing Orelha Cartilagem Em V Zircônias Cravejadas", preco:40.00, img:"assets/brinco/brinco64.png", categoria:"brinco"},
+{nome:"Piercing Orelha Cartilagem Trabalhado Cravejado Zircônia", preco:40.00, img:"assets/brinco/brinco65.png", categoria:"brinco"},
+{nome:"Piercing Orelha Cadeado Cravejado", preco:40.00, img:"assets/brinco/brinco66.png", categoria:"brinco"},
     // ----------------- COLARES -----------------
 {nome:"Colar Pedra Brilhante Cruz Nylon 40cm", preco:50, img:"assets/colares/colar1.png", categoria:"colar"},
 {nome:"Colar Nylon 40cm Com Pingente Estrela 11mm", preco:50, img:"assets/colares/colar2.png", categoria:"colar"},
@@ -90,6 +107,11 @@ let produtos = [
 {nome:"Colar Elo Cartier Pingentes Borboletas 40cm", preco: 150, img:"assets/colares/colar37.png", categoria: "colar"},
 {nome:"Colar MOISSANITE (Diamante Lab) 45cm com 5mm", preco: 150, img:"assets/colares/colar38.png", categoria: "colar"},
 {nome:"Colar MOISSANITE (Diamante Lab) 45cm com 7mm", preco: 180, img:"assets/colares/colar39.png", categoria: "colar"},
+{nome:"Escapulário 60cm São Bento Elo Cadeado", preco:170.00, img:"assets/colares/colar40.png", categoria:"colar"},
+{nome:"Escapulário 60Cm Estrela De Davi", preco:160.00, img:"assets/colares/colar41.png", categoria:"colar"},
+{nome:"Escapulário 60Cm Amar Mar", preco:130.00, img:"assets/colares/colar42.png", categoria:"colar"},
+{nome:"Colar 60cm Zircônias Coloridas", preco:120.00, img:"assets/colares/colar43.png", categoria:"colar"},
+{nome:"Colar 45Cm Sagrado Coração De Jesus", preco:120.00, img:"assets/colares/colar44.png", categoria:"colar"},
     // ----------------- PULSEIRAS -----------------
 {nome:"Pulseira Elo Cadeado 19cm",preco:70.00,img:"assets/pulseiras/pulseira1.png",categoria:"pulseira"},
 {nome:"Pulseira Diamantada Laminada 18cm",preco:70.00,img:"assets/pulseiras/pulseira2.png",categoria:"pulseira"},
@@ -240,9 +262,19 @@ let produtos = [
 {nome:"Personalizado Colar Inicial Com 4Cm",preco:245.00,img:"assets/personalizado/personalizado26.png",categoria:"personalizado"},
 
     // ----------------- MASCULINO -----------------
-{nome:"Pulseira Masculina Exemplo",preco:140,img:"assets/masculino/masculino1.png",categoria:"masculino"}
-];
-
+// Linha Masculina (correntes + pulseiras + escapulários masculinos)
+{nome:"Escapulário 60Cm Sagrado Coração De Jesus E Nossa Senhora", preco:150.00, img:"assets/linha masculina/linha masculina1.png", categoria:"masculino"},
+{nome:"Pulseira Masculina Elo 5X1 20cm", preco:150.00, img:"assets/linha masculina/linha masculina2.png", categoria:"masculino"},
+{nome:"Escapulário Deus É Fiel 60cm", preco:150.00, img:"assets/linha masculina/linha masculina3.png", categoria:"masculino"},
+{nome:"Escapulário 60cm Sagrado Coração E Nossa Sra Do Carmo", preco:170.00, img:"assets/linha masculina/linha masculina4.png", categoria:"masculino"},
+{nome:"Corrente Masculina 70cm Elo Cartier", preco:190.00, img:"assets/linha masculina/linha masculina5.png", categoria:"masculino"},
+{nome:"Pulseira Masculina 20Cm Elo 3X1 4Mm Espessura-Fio 0.80", preco:190.00, img:"assets/linha masculina/linha masculina6.png", categoria:"masculino"},
+{nome:"Corrente Masculina 60Cm Elo Gucci 2Mm Espessura Fio 0,6", preco:195.00, img:"assets/linha masculina/linha masculina7.png", categoria:"masculino"},
+{nome:"Corrente Masculina 60Cm Elo 1X1 2Mm Espessura", preco:210.00, img:"assets/linha masculina/linha masculina8.png", categoria:"masculino"},
+{nome:"Corrente Masculina 70cm Elo 1X1 2mm Espessura", preco:220.00, img:"assets/linha masculina/linha masculina9.png", categoria:"masculino"},
+{nome:"Corrente Elo Grumet 60Cm 3Mm Espessura Masculina", preco:255.00, img:"assets/linha masculina/linha masculina10.png", categoria:"masculino"},
+{nome:"Corrente Masculina 70Cm 3X1 2mm Espessura", preco:255.00, img:"assets/linha masculina/linha masculina11.png", categoria:"masculino"},
+]
 // --------------------------------------------------
 // FUNÇÃO PARA MOSTRAR PRODUTOS
 function mostrarProdutos(lista) {
